@@ -2,7 +2,7 @@ import os
 import shutil
 import hashlib
 import logging
-from utils import create_directory_if_not_exists, compute_md5
+from .utils import create_directory_if_not_exists, compute_md5
 
 
 class FolderSync:
@@ -13,7 +13,7 @@ class FolderSync:
         self.logger = self.setup_logger()
 
     def setup_logger(self):
-        logger = logging.getLogger(FolderSync)
+        logger = logging.getLogger("FolderSync")
         logger.setLevel(logging.INFO)
 
         handler = logging.FileHandler(self.log_file)
